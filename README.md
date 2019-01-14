@@ -11,7 +11,7 @@ sudo apt install fzf
 curl https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.zsh "~/zsh-config/completion.zsh"
 curl https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.zsh "~/zsh-config/key-bindings.zsh"
 
-# Install antibody (if you're comfortable with piping scripts to your shell.)
+# setup antibody (if you're comfortable with piping scripts to your shell.)
 # Alternatively, your distro may have it packaged. It's also available as a snap.
 # https://getantibody.github.io/install/
 curl -sL git.io/antibody | sh -s
@@ -24,8 +24,26 @@ Log out and login again.
 ## Dependencies
 
 * zsh - it includes a RPROMPT
-* fzf - used for _fuzzy finding_
-* Antibody - used for plugin management
+* fzf - for _fuzzy finding_
+* Antibody - for plugin management
+
+## Performance
+
+
+```
+~
+sam@workstation › for i in {1..10}; do time zsh -ic 'exit'; done               
+zsh -ic 'exit'  0.04s user 0.02s system 100% cpu 0.061 total
+zsh -ic 'exit'  0.04s user 0.03s system 100% cpu 0.064 total
+zsh -ic 'exit'  0.04s user 0.02s system 100% cpu 0.065 total
+zsh -ic 'exit'  0.04s user 0.02s system 100% cpu 0.065 total
+zsh -ic 'exit'  0.04s user 0.03s system 100% cpu 0.065 total
+zsh -ic 'exit'  0.03s user 0.03s system 100% cpu 0.059 total
+zsh -ic 'exit'  0.05s user 0.02s system 100% cpu 0.069 total
+zsh -ic 'exit'  0.04s user 0.03s system 100% cpu 0.069 total
+zsh -ic 'exit'  0.05s user 0.01s system 99% cpu 0.060 total
+zsh -ic 'exit'  0.04s user 0.02s system 99% cpu 0.064 total
+```
 
 ## Credits
 
