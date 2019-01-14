@@ -1,1 +1,2 @@
-**/.DS_Store
+antibody/zsh-managed-plugins.zsh
+lib/fzf/*
