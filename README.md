@@ -14,7 +14,6 @@ https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.zsh
 curl -o "~/zsh-config/lib/fzf/key-bindings.zsh" \
 https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.zsh
 
-
 # setup antibody (if you're comfortable with piping scripts to your shell.)
 # Alternatively, your distro may have it packaged. It's also available as a snap.
 # https://getantibody.github.io/install/
@@ -32,7 +31,6 @@ Log out and login again.
 * Antibody - for plugin management
 
 ## Performance
-
 
 ```
 ~
