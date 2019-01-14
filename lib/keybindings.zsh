@@ -9,6 +9,9 @@
 #
 # vim mode keybindings
 bindkey -v
+#responsive vim mode switching 
+KEYTIMEOUT=1
+
 #
 bindkey '^P' up-history                           # ctrl-p
 bindkey '^N' down-history                         # ctrl-n

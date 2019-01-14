@@ -10,7 +10,6 @@
 #		http://linux-sxs.org/housekeeping/lscolors.html
 #
 # Needs dircolors/gdircolors from GNU coreutils
-# brew info coreutils
 
 DIR 		01;34 					# directory
 LINK 		target

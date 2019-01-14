@@ -1,0 +1,36 @@
+#!/usr/bin/env zsh
+# vim:syntax=sh
+# vim:filetype=sh
+
+zsh_config_setup() {
+	local -r ZSHCONFIG="${ZDOTDIR:-$HOME}/.zsh-config"
+
+	# dependency checks
+	[[ -f "${ZSHCONFIG}/lib/fzf/completion.zsh" ]]   || { echo "lib/fzf/competion.zsh not found!" >2; exit 1; }
+	[[ -f "${ZSHCONFIG}/lib/fzf/key-bindings.zsh" ]] || { echo "lib/fzf/keybindings.zsh not found!" >2; exit 1; }
+	command -v "antibody" >/dev/null 2>&1            || { echo "Antibody not found!" >2; exit 1; }
+
+	echo 'Installing antibody plugins ... '
+	antibody bundle < "${ZSHCONFIG}/antibody/zsh-antibody-plugins-list" \
+			> "${ZSHCONFIG}/antibody/zsh-managed-plugins.zsh" || \
+		       	{ echo "Antibody setup failed!" >2; exit 1; }
+	echo '> Done!'
+
+	local -r zfiles="${ZSHCONFIG}/zfiles"
+	echo "Linking zsh config files in ${zfiles} to ${HOME}"
+	ln -sf "${zfiles}/zlogin" "${HOME}/.zlogin"
+	ln -sf "${zfiles}/zprofile" "${HOME}/.zprofile"
+	ln -sf "${zfiles}/zshenv" "${HOME}/.zshenv"
+	ln -sf "${zfiles}/zshrc" "${HOME}/.zshrc"
+	echo "> Done!"
+
+	echo "Setup complete!"
+}
+
+zsh_config_cleanup() {
+	echo "Cleaning up links to resource files in ${HOME}"
+	rm -f "${HOME}/.zlogin" "${HOME}/.zprofile" "${HOME}/.zshenv" "${HOME}/.zshrc"
+	echo "Done!"
+}
+
+zsh_config_setup

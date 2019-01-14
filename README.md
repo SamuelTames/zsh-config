@@ -1,35 +1,36 @@
-# My ZSH Configurations
+# Lighweight ZSH Configuration
 
-## Quick Start
+## Install
 
 ```sh
-# get to the home folder
-$ cd
-# pull the git repos
-$ git clone git@github.com:htr3n/zsh-config.git .zsh-config
-# then link the startup files
-$ sh ~/.zsh-config/bootstrap
+# pull the git repo to correct location
+git clone https://github.com/SamuelTames/zsh-config.git ~/.zsh-config
+
+# setup fzf (debian buster has fzf in the repo)
+sudo apt install fzf
+curl https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.zsh "~/zsh-config/completion.zsh"
+curl https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.zsh "~/zsh-config/key-bindings.zsh"
+
+# Install antibody (if you're comfortable with piping scripts to your shell.)
+# Alternatively, your distro may have it packaged. It's also available as a snap.
+# https://getantibody.github.io/install/
+curl -sL git.io/antibody | sh -s
+
+# link the zsh config files to their expected location in ${HOME}
+sh ~/.zsh-config/install
 ```
+Log out and login again.
 
-Log out and login again!!!
+## Dependencies
 
-In case you want to have private setting excluded from public Git repos, just create a file `.private.sh` in the home folder.
-
-## Plugin Management
-
-Instead of manually installing some ZSH plugins, I use [antibody](https://getantibody.github.io) to manage necessary plugins (some are not working with _antibody_ such as 'fzf', so manual task it is).
-
-Some useful plugins:
-
-* [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-* [zsh-completions](https://github.com/zsh-users/zsh-completions)
-* [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search)
-* [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+* zsh - it includes a RPROMPT
+* fzf - used for _fuzzy finding_
+* Antibody - used for plugin management
 
 ## Credits
 
-I developed most of the configuration on my own but nevertheless learned a lot from [Oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) and [Prezto](https://github.com/sorin-ionescu/prezto) and many other sources for various settings.
+Forked from work done here: https://htr3n.github.io/2018/07/faster-zsh/
 
 ## License
 
-<3 MIT License.
+MIT License.

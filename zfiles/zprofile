@@ -1,10 +1,11 @@
+#!/usr/bin/env zsh
 # vim:syntax=zsh
 # vim:filetype=zsh
 
-#
+#-----------------------------------------------------
 # Executes commands at login before zshrc.
 #
-if [[ -z "$LANG" ]]; then
+if [[ -z "${LANG}" ]]; then
     export LANG='en_US.UTF-8'
     export LANGUAGE=en_US.UTF-8
 fi
@@ -18,11 +19,15 @@ export LC_TIME=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LESSCHARSET=utf-8
 
+#-----------------------------------------------------
 # eliminates duplicates in *paths
+#
 typeset -gU cdpath fpath path
 
-# Zsh search path for executable
+#-----------------------------------------------------
+# zsh search path for executable
+#
 path=(
   /usr/local/{bin,sbin}
-  $path
+  "${path[@]}"
 )

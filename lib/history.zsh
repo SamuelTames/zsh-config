@@ -5,11 +5,12 @@
 #-----------------------------------------------------
 # ZSH HISTORY
 #
-export HISTFILE=${HOME}/.history
+export HISTFILE="${HOME}/.history"
 export HISTSIZE=10000
-export SAVEHIST=$HISTSIZE
-#
-setopt EXTENDED_HISTORY			    # write in the ":start:elapsed;command" format
+export SAVEHIST="${HISTSIZE}"
+
+
+setopt EXTENDED_HISTORY	        # write in the ":start:elapsed;command" format
 setopt HIST_EXPIRE_DUPS_FIRST   # allow dups, but expire old ones when exceeding HISTSIZE
 setopt HIST_FIND_NO_DUPS        # do not find duplicates in history
 setopt HIST_IGNORE_ALL_DUPS     # ignore duplicate commands

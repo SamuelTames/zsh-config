@@ -28,7 +28,7 @@ setopt clobber              # turn off warning "file exists" with > and >>
 # https://goo.gl/fJbtmJ
 #
 globalias() {
-   if [[ $LBUFFER =~ ' [A-Z0-9]+$' ]]; then
+   if [[ "${LBUFFER}" =~ ' [A-Z0-9]+$' ]]; then
      zle _expand_alias
      zle expand-word
    fi
@@ -53,18 +53,11 @@ bindkey -M isearch " " magic-space # normal space during searches
 # https://github.com/zsh-users/zsh-completions
 #
 # fpath=(${ZSHCONFIG}/zsh-completions/src $fpath)
-#autoload -U compinit && compinit
+# autoload -U compinit && compinit
 # Performance
 # https://gist.github.com/ctechols/ca1035271ad134841284
 
-#-----------------------------------------------------
-# https://github.com/junegunn/fzf#fuzzy-completion-for-bash-and-zsh
-#
-# brew install fzf
-#
-test -d ${ZDOTDIR:-$HOME}/.fzf && source ${ZDOTDIR:-$HOME}/.fzf.zsh
-
-#-----------------------------------------------------
-# https://github.com/nvbn/thefuck
-# brew install thefuck
-# eval $(thefuck --alias)
+# #-----------------------------------------------------
+# load fzf
+source "${ZSHCONFIG}/lib/fzf/completion.zsh"
+source "${ZSHCONFIG}/lib/fzf/key-bindings.zsh"

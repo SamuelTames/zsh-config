@@ -4,6 +4,6 @@
 
 #-----------------------------------------------------
 # Add colors to ls command
-if [ -f "/usr/local/bin/gdircolors"  ] || [ -f "/usr/bin/gdircolors"  ]; then
-	eval $( gdircolors -b ${ZSHCONFIG}/lib/dircolors-custom )
+if command -v "dircolors" >/dev/null 2>&1; then
+	eval "$(dircolors -b "${ZSHCONFIG}/lib/dircolors-custom")"
 fi
