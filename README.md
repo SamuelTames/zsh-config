@@ -26,9 +26,9 @@ Log out and login again.
 
 ## Dependencies
 
-* zsh - it includes a RPROMPT
-* fzf - for _fuzzy finding_
-* Antibody - for plugin management
+* zsh - large ecosystem of plugins + features over bash
+* fzf - _fuzzy finding_
+* Antibody - plugin management
 
 ## Performance
 
