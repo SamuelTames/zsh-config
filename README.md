@@ -1,4 +1,4 @@
-# Lighweight ZSH Configuration
+# Lightweight ZSH Configuration
 
 ## Install
 
