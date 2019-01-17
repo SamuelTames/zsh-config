@@ -3,10 +3,10 @@
 ## Install
 
 ```sh
-# pull the git repo to correct location
+# clone to the correct location
 git clone https://github.com/SamuelTames/zsh-config.git ~/.zsh-config
 
-# setup fzf (debian buster has fzf in the repo)
+# setup fzf (debian buster has fzf in the repo -- your distro may differ)
 sudo apt install fzf
 curl -o "~/.zsh-config/lib/fzf/completion.zsh" \
 https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.zsh
@@ -26,7 +26,7 @@ Log out and login again.
 
 ## Dependencies
 
-* zsh - large ecosystem of plugins + features over bash
+* zsh - large plugin ecosystem + additional features over bash
 * fzf - _fuzzy finding_
 * Antibody - plugin management
 
@@ -46,7 +46,6 @@ zsh -ic 'exit'  0.04s user 0.03s system 100% cpu 0.069 total
 zsh -ic 'exit'  0.05s user 0.01s system 99% cpu 0.060 total
 zsh -ic 'exit'  0.04s user 0.02s system 99% cpu 0.064 total
 ```
-
 ## Credits
 
 Forked from work done here: https://htr3n.github.io/2018/07/faster-zsh/
